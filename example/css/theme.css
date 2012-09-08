@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+body {
+  font-family: Helvetica,Arial,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+  word-break: break-word;
+  background: #c4cde0;
+  width: 100%;
+}
+h6 {
+  text-transform: none !important;
+  font-size: 11px;
+  color: #bbb;
+  font-weight: normal;
+}
+a {
+  color: #576b95 !important;
+}
+a:hover {
+  text-decoration: none !important;
+}
+body {
+  min-height: 357px;
+  border-top: solid 1px #1d4088;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.header {
+  height: 44px;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, from(#738aba), to(#2c4987));
+  border-color: #111A33;
+  -webkit-box-shadow: inset 0 1px 1px -1px #ffffff;
+  -moz-box-shadow: inset 0 1px 1px -1px #ffffff;
+  box-shadow: inset 0 1px 1px -1px #ffffff;
+}
+.header #header-title {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.35);
+  line-height: 44px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.view .card {
+  background: #fff;
+  margin: 10px 10px 15px 10px;
+  -webkit-box-shadow: 0 1px 2px #888888;
+  -moz-box-shadow: 0 1px 2px #888888;
+  box-shadow: 0 1px 2px #888888;
+}
+.view .card.photo {
+  padding-bottom: 10px;
+}
+.view .card .title {
+  padding: 10px;
+  *zoom: 1;
+}
+.view .card .title:before,
+.view .card .title:after {
+  display: table;
+  content: "";
+}
+.view .card .title:after {
+  clear: both;
+}
+.view .card .title img {
+  display: block;
+  float: left;
+  margin-right: 8px;
+  width: 34px;
+  height: 34px;
+}
+.view .card .c {
+  float: left;
+}
+.view .card .c .voice-title {
+  font-size: 13px;
+  color: #777;
+}
+.invisible-phone {
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f00;
+}
+.mobile .invisible-phone {
+  display: none !important;
+}
+.copy {
+  padding: 10px;
+  text-align: center;
+  font-size: 10px;
+}
