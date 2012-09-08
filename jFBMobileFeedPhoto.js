@@ -1,7 +1,7 @@
 /*!
  * jFBMobileFeedPhoto.js
  *
- * @version  1.0.1
+ * @version  1.0.2
  * @author   Yusuke Sugomori
  * @license  http://yusugomori.com/license/mit The MIT License
  *
@@ -25,6 +25,7 @@ jFBMobileFeedPhoto = (function() {
     this.overlayCloseText = 'Done';
     this.overlayCloseTextPos = 15;
     this.isOverlayShown = false;
+    this.isOriented = false;
     this.onTouchThres = 10;
     this.onTouchCurrent = {
       x: 0,
@@ -241,7 +242,8 @@ jFBMobileFeedPhoto = (function() {
       return _this.hideOverlay();
     });
     $(window).on('scroll', function(e) {
-      return _this.hideOverlay();
+      if (!_this.isOriented) _this.hideOverlay();
+      return _this.isOriented = false;
     });
   };
 
@@ -602,6 +604,7 @@ jFBMobileFeedPhoto = (function() {
       _this.slideImageFix(true);
       _this.main();
       if (_this.isOverlayShown) {
+        _this.isOriented = true;
         _this.setOverlayCss();
         return _this.slideImageFixOverlay(true);
       }

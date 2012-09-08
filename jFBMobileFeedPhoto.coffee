@@ -1,7 +1,7 @@
 ###!
  * jFBMobileFeedPhoto.js
  *
- * @version  1.0.1
+ * @version  1.0.2
  * @author   Yusuke Sugomori
  * @license  http://yusugomori.com/license/mit The MIT License
  *
@@ -27,6 +27,8 @@ class jFBMobileFeedPhoto
     @overlayCloseText = 'Done'
     @overlayCloseTextPos = 15
     @isOverlayShown = false
+
+    @isOriented = false
 
     @onTouchThres = 10
     @onTouchCurrent = {x: 0, y: 0}
@@ -222,8 +224,9 @@ class jFBMobileFeedPhoto
 
     # Bind scroll
     $(window).on 'scroll', (e) =>
-      @hideOverlay()
-
+      unless @isOriented
+        @hideOverlay()
+      @isOriented = false
 
     return
 
@@ -621,6 +624,7 @@ class jFBMobileFeedPhoto
       @main()
 
       if @isOverlayShown
+        @isOriented = true
         @setOverlayCss()
         @slideImageFixOverlay(true)
     return
