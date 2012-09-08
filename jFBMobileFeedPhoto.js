@@ -1,7 +1,7 @@
 /*!
  * jFBMobileFeedPhoto.js
  *
- * @version  1.0.0
+ * @version  1.0.1
  * @author   Yusuke Sugomori
  * @license  http://yusugomori.com/license/mit The MIT License
  *
@@ -240,6 +240,9 @@ jFBMobileFeedPhoto = (function() {
     this.$overlayPlaceHolder.children().eq(1).on('click', function(e) {
       return _this.hideOverlay();
     });
+    $(window).on('scroll', function(e) {
+      return _this.hideOverlay();
+    });
   };
 
   jFBMobileFeedPhoto.prototype.hideOverlay = function() {
@@ -252,6 +255,7 @@ jFBMobileFeedPhoto = (function() {
     this.$overlayPlaceHolder.children().eq(1).off('click');
     this.$overlayPlaceHolder.hide();
     this.isOverlayShown = false;
+    $(window).off('scroll');
     scrollTo(0, this.scrollTop);
   };
 
@@ -391,7 +395,7 @@ jFBMobileFeedPhoto = (function() {
     this.$overlayPlaceHolder.css({
       overflow: 'hidden',
       'z-index': 9999,
-      position: 'absolute',
+      position: 'fixed',
       top: 0,
       left: 0,
       background: '#000'

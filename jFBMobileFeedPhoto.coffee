@@ -1,7 +1,7 @@
 ###!
  * jFBMobileFeedPhoto.js
  *
- * @version  1.0.0
+ * @version  1.0.1
  * @author   Yusuke Sugomori
  * @license  http://yusugomori.com/license/mit The MIT License
  *
@@ -220,6 +220,11 @@ class jFBMobileFeedPhoto
     @$overlayPlaceHolder.children().eq(1).on 'click', (e) =>
       @hideOverlay()
 
+    # Bind scroll
+    $(window).on 'scroll', (e) =>
+      @hideOverlay()
+
+
     return
 
   hideOverlay: () ->
@@ -231,6 +236,7 @@ class jFBMobileFeedPhoto
     @$overlayPlaceHolder.children().eq(1).off 'click'
     @$overlayPlaceHolder.hide()
     @isOverlayShown = false
+    $(window).off 'scroll'
     scrollTo(0, @scrollTop)
 
     return
@@ -376,8 +382,8 @@ class jFBMobileFeedPhoto
     @$overlayPlaceHolder.css
       overflow: 'hidden'
       'z-index': 9999
-      position: 'absolute'
-      # position: 'fixed'
+      # position: 'absolute'
+      position: 'fixed'
       top: 0
       left: 0
       background: '#000'
